@@ -10,7 +10,7 @@ module Rack
   class Jekyll
     @compiling = false
     
-    def initialize
+    def initialize(opts = {})
       config_file = '_config.yml'
       if ::File.exist?(config_file)
         config = YAML.load_file(config_file)
@@ -24,6 +24,7 @@ module Rack
       
       if ::Dir[@path + "/**/*"].empty?
         require "jekyll"
+        options = ::Jekyll.configuration(opts)
         site = ::Jekyll::Site.new(options)
         site.process
         

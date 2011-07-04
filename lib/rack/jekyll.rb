@@ -2,6 +2,7 @@ require "rack"
 require "yaml"
 require "rack/request"
 require "rack/response"
+require 'yaml'
 require File.join(File.dirname(__FILE__), 'jekyll', 'helpers')
 require File.join(File.dirname(__FILE__), 'jekyll', 'version')
 
